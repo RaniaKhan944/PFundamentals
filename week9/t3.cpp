@@ -118,11 +118,10 @@ void flip(int cars[][5], int rowsize)
                 for (int j = 0; j < 3; j++)
                 {
                     cout << cars[y][x] << "\t";
-                    if (j == 2)
-                    {
-                        cout << endl;
-                    }
+                
+                    
                 }
+                cout<<endl;
             }
         }
     }

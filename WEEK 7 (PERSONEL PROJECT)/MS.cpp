@@ -58,7 +58,7 @@ int main()
                         cout << "2.ADD PATIENT" << endl;
                         cout << "3.UPDATE PATIENT RECORD" << endl;
                         cout << "4.DELETE PATIENT RECORD" << endl;
-                        cout << "5.SEARCH PATIENT AND SCHEDULE BY NAME." << endl;
+                        cout << "5.SEARCH PATIENT AND SCHEDULE BY NAME" << endl;
                         cout << "6.SORT PATIENTS VIA BILLS" << endl;
                         cout << "7.LOGOUT" << endl;
                         cout << "CHOOSE AN OPTION: ";
@@ -96,25 +96,27 @@ int main()
                             string schedule;
                             cin >> schedule;
 
-                            int new_patient = -1;
-                            for (int i = 0; i < current_patient; i++)
-                            {
-                                if (nameArray[i] == "")
-                                {
-                                    new_patient = i;
-                                    break;
-                                }
-                            }
+                            // int new_patient = -1;
+                            // for (int i = 0; i < current_patient; i++)
+                            // {
+                            //     if (nameArray[i] == "")
+                            //     {
+                            //         new_patient = i;
+                            //         break;
+                            //     }
+                            // }
                             // dealing with garbage values
-                            if (new_patient == -1)
-                            {
-                                new_patient = current_patient;
-                                current_patient++;
-                            }
-                            nameArray[new_patient] = name;
-                            ageArray[new_patient] = age;
-                            scheduleArray[new_patient] = schedule;
-                            billArray[new_patient] = 00000;
+                            // if (new_patient == -1)
+                            // {
+                            //     new_patient = current_patient;
+                            //     current_patient++;
+                            // }
+
+                            nameArray[current_patient] = name;
+                            ageArray[current_patient] = age;
+                            scheduleArray[current_patient] = schedule;
+                            billArray[current_patient] = 00000;
+                            current_patient = current_patient + 1;
 
                             cout << "PATIENT ADDED!" << endl;
                             cout << "PRESS ANY KEY TO CONTINUE: ";
@@ -265,6 +267,8 @@ int main()
                                 {
                                     cout << nameArray[i] << "\t" << billArray[i] << endl;
                                 }
+                                cout << "PRESS ANY KEY TO CONTINUE: ";
+                                getch();
                             }
                             else if (sortOption == 2)
                             {
@@ -290,6 +294,8 @@ int main()
                                 {
                                     cout << nameArray[i] << "\t" << billArray[i] << endl;
                                 }
+                                cout << "PRESS ANY KEY TO CONTINUE: ";
+                                getch();
                             }
                         }
 
@@ -301,20 +307,16 @@ int main()
                         {
                             cout << "WRONG OPTION SELECTED" << endl;
                         }
-
-                        cout << "PRESS ANY KEY TO CONTINUE: ";
-                        getch();
                     }
-                    cout << "PRESS ANY KEY TO CONTINUE: ";
-                    getch();
                     break;
                 }
+
                 else
                 {
                     cout << "INVALID USERNAME/PASSWORD!" << endl;
+                    cout << "PRESS ANY KEY TO CONTINUE: ";
+                    getch();
                 }
-                cout << "PRESS ANY KEY TO CONTINUE: ";
-                getch();
             }
         }
 
